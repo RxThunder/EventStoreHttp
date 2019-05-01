@@ -1,0 +1,29 @@
+{
+  "name": "rxthunder/eventstore-http",
+  "description": "EventStore HTTP Client based on RxNET Client",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jérémy Marodon",
+      "email": "marodon.jeremy@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "rxnet/http-client": "^0.1.0",
+    "voryx/event-loop": "^3.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpro/grumphp": "^0.15.0",
+    "sensiolabs/security-checker": "^5.0",
+    "phpstan/phpstan": "^0.11.5",
+    "youdot/coding-standard": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "RxThunder\\EventStoreHttp\\": "src/"
+    }
+  }
+}
