@@ -11,7 +11,7 @@
   ],
   "require": {
     "ext-json": "*",
-    "rxnet/http-client": "^0.1.0",
+    "rxnet/http-client": "^0.2.0",
     "voryx/event-loop": "^3.0"
   },
   "require-dev": {

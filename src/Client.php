@@ -14,7 +14,7 @@ use Clue\React\Buzz\Browser as ReactBrowser;
 use EventLoop\EventLoop;
 use React\EventLoop\LoopInterface;
 use React\Socket\ConnectorInterface;
-use Rx\ObservableInterface;
+use Rx\Observable;
 use Rxnet\HttpClient\Browser;
 
 final class Client
@@ -58,7 +58,7 @@ final class Client
     /**
      * Metadata are not available with this method
      */
-    public function sendEvent(string $stream, Event $event): ObservableInterface
+    public function sendEvent(string $stream, Event $event): Observable
     {
         return $this->http->post(
             $this->getUrl($stream),
@@ -71,7 +71,7 @@ final class Client
         );
     }
 
-    public function sendCollection(string $stream, EventCollection $collection): ObservableInterface
+    public function sendCollection(string $stream, EventCollection $collection): Observable
     {
         return $this->http->post(
             $this->getUrl($stream),
@@ -84,7 +84,7 @@ final class Client
      * @param Event|EventCollection $payload
      * @param bool                  $wrap    This option automatically wrap an unique Event into an EventCollection which allows metadata
      */
-    public function send(string $stream, $payload, bool $wrap = true): ObservableInterface
+    public function send(string $stream, $payload, bool $wrap = true): Observable
     {
         if ($payload instanceof EventCollection) {
             return $this->sendCollection($stream, $payload);
